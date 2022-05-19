@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f0f3b754-85fc-4ac4-ade5-d6889f207e9f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="totalPrice" class="java.lang.String">
+		<fieldDescription><![CDATA[totalPrice]]></fieldDescription>
+	</field>
+	<field name="gst" class="java.lang.String">
+		<fieldDescription><![CDATA[gst]]></fieldDescription>
+	</field>
+	<field name="customerName" class="java.lang.String">
+		<fieldDescription><![CDATA[customerName]]></fieldDescription>
+	</field>
+	<field name="productName" class="java.lang.String">
+		<fieldDescription><![CDATA[productName]]></fieldDescription>
+	</field>
+	<field name="customercontactNo" class="java.lang.String">
+		<fieldDescription><![CDATA[customercontactNo]]></fieldDescription>
+	</field>
+	<field name="productQuantity" class="java.lang.String">
+		<fieldDescription><![CDATA[productQuantity]]></fieldDescription>
+	</field>
+	<field name="totalGst" class="java.lang.String">
+		<fieldDescription><![CDATA[totalGst]]></fieldDescription>
+	</field>
+	<field name="sno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[sno]]></fieldDescription>
+	</field>
+	<field name="productDiscount" class="java.lang.String">
+		<fieldDescription><![CDATA[productDiscount]]></fieldDescription>
+	</field>
+	<field name="totalDiscount" class="java.lang.String">
+		<fieldDescription><![CDATA[totalDiscount]]></fieldDescription>
+	</field>
+	<field name="markedPrice" class="java.lang.String">
+		<fieldDescription><![CDATA[markedPrice]]></fieldDescription>
+	</field>
+	<field name="payblePrice" class="java.lang.String">
+		<fieldDescription><![CDATA[payblePrice]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="-10" y="0" width="570" height="20" uuid="a4b2a177-3c09-4f2c-8556-f25363407c47"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inventory Management System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="24" width="220" height="20" uuid="f079ca2c-3aca-40bc-b9ff-55e519d85452"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Some Location -PIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="42" width="220" height="18" uuid="186d9e21-ca25-484e-9e48-922b22272c89"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[GST No:22AAAA0AAZ3]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="-20" y="9" width="580" height="30" uuid="cd3e9685-f01c-4a07-a566-f89f881324ed"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Invoice]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="6" width="100" height="24" uuid="cc83950c-4eaa-4bbe-a6dd-95de268d799c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Customer Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="102" y="6" width="148" height="24" uuid="8a7730a7-7030-42a7-acb4-38fbb93fb66e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="29" width="100" height="21" uuid="676aba47-0667-4c37-a1cd-900eb3f32905"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Billing Address:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="102" y="31" width="148" height="37" uuid="4e1cf874-c58f-4141-86cf-ed1cd3bc86e8"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="6" width="99" height="23" uuid="bf5b3ec5-429b-4c3f-a970-a5ec6b6a6bca"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Customer Mob:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="399" y="7" width="131" height="22" uuid="fc2af64e-b315-494c-b4aa-2b8321b1e840"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customercontactNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="28" width="99" height="22" uuid="6cbd6cdf-2e77-466e-8133-c2eae216b388"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="28" width="129" height="21" uuid="fe326f9b-d373-4137-ac6b-1d5d772a9207"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="67" y="75" width="77" height="23" uuid="da62ed65-00fc-4801-a3a8-e1c59d9a7e84"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="76" width="100" height="22" uuid="ec729302-b8a5-47f4-b744-921236dd1e6a"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="76" width="91" height="22" uuid="76ac3bbf-87e0-4862-86ce-3cc358027a7d"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="76" width="92" height="24" uuid="55d7e5f1-776d-4955-bfd2-4b9a5942d650"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="76" width="100" height="23" uuid="f5230fcb-56e3-4e58-860c-983b84fc9ac7"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="76" width="49" height="18" uuid="0996ba3a-f0a9-4647-bfbe-e100cb673179"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.No]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="13" y="4" width="48" height="18" uuid="82516e19-9756-41c6-b8cc-0e0fb583d62a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="62" y="3" width="77" height="19" uuid="3873b8fd-b45a-4c26-9672-958a186d2f05"/>
+				<textFieldExpression><![CDATA[$F{productName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="3" width="99" height="19" uuid="6e2d86bb-2647-4dfd-9d3f-c66072e471fe"/>
+				<textFieldExpression><![CDATA[$F{markedPrice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="236" y="4" width="92" height="18" uuid="d89cfc13-28c8-494f-af73-d896217dd320"/>
+				<textFieldExpression><![CDATA[$F{productQuantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="2" width="88" height="19" uuid="ef5dcbef-cc35-4fb7-a956-b5af698c6fd8"/>
+				<textFieldExpression><![CDATA[$F{productDiscount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="2" width="100" height="20" uuid="0718572d-9ab9-4100-8b6c-3450db30f69e"/>
+				<textFieldExpression><![CDATA[$F{payblePrice}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="344" y="0" width="73" height="18" uuid="70a97825-af8d-425e-9963-3e8db62b6ff2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GST%:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="17" width="73" height="21" uuid="22e5e497-7c99-4b1f-aeb0-7602538dd7f2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discount:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="56" width="71" height="22" uuid="540cf692-0ad8-4493-b1dc-cf402280b66d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="415" y="-2" width="100" height="19" uuid="f5efffb1-b39e-432a-a789-ba790af18428"/>
+				<textFieldExpression><![CDATA[$F{gst}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="17" width="98" height="21" uuid="b23aa1de-7463-4d70-88b2-55a3f0a72831"/>
+				<textFieldExpression><![CDATA[$F{totalDiscount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="56" width="97" height="22" uuid="4ea7ea7d-ef91-4973-ba1e-460ab7acfe34"/>
+				<textFieldExpression><![CDATA[$F{totalPrice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="345" y="36" width="73" height="20" uuid="682762fb-4cc8-4f5f-b4ff-4accdef62457"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Gst:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="414" y="38" width="100" height="17" uuid="853c1b63-79e8-4a31-b235-39c489467cad"/>
+				<textFieldExpression><![CDATA[$F{totalGst}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="-20" y="0" width="580" height="20" uuid="830cf36c-cef2-4e9d-a74a-70561dd3cd7b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Once A product sold will not be returned so please check well before leaving counter.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-20" y="30" width="580" height="30" uuid="024d39e2-0b87-45a4-ae24-db939fdd81e4"/>
+				<textElement textAlignment="Left">
+					<font size="11" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Under some circumstances It can be replaced within six working days of purchase.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="71" width="537" height="27" uuid="0b0aa17e-edfe-4834-ba27-d569709255eb"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Copyright © 2022 - Inventorymanagement.All Rights Reserved.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="47" splitType="Stretch"/>
+	</summary>
+</jasperReport>
