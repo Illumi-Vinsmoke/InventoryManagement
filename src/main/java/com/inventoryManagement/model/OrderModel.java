@@ -3,13 +3,12 @@ package com.inventoryManagement.model;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,7 +29,7 @@ import lombok.ToString;
 @Entity
 public class OrderModel {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long orderId;
 	private String customerName;
 	private Long customercontactNo;
@@ -39,6 +38,7 @@ public class OrderModel {
 	private Float totalGst;
 	private Float totalDiscount;
 	private Float totalbill;
-	@OneToMany(mappedBy="salesId",cascade = CascadeType.ALL)
+	private Float gst;
+	@OneToMany(mappedBy="salesId",cascade = CascadeType.ALL,fetch=FetchType.LAZY)
 	Set<SalesModel> sale=new HashSet<SalesModel>();
 }

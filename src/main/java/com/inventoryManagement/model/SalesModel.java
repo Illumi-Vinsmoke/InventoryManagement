@@ -1,6 +1,7 @@
 package com.inventoryManagement.model;
 
 	import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,15 +26,15 @@ import lombok.ToString;
 	@Entity
 	public class SalesModel {
 		@Id
-		@GeneratedValue(strategy=GenerationType.AUTO)
+		@GeneratedValue(strategy=GenerationType.IDENTITY)
 	    private Long salesId;
-		private Integer Sno;
-		private String ProductName;
+		private Integer sNo;
+		private String productName;
 		private Float actualPrice;
 		private Float discount;
 		private Integer quantity;
 		private Float paybleAmount;
-		@ManyToOne
+		@ManyToOne(fetch = FetchType.LAZY)
 		@JoinColumn(name="Order_id", nullable=false)
 		private OrderModel order=new OrderModel();
 				

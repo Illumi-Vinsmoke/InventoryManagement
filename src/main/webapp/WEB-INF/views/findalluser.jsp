@@ -18,6 +18,12 @@
 	crossorigin="anonymous">
 </head>
 <body>
+
+<%if(session.getAttribute("userName")==null)
+	response.sendRedirect("/login");
+	%>
+	<h1>Welcome <%= request.getAttribute("userName")%></h1>
+	
 	<form>
 		<fieldset>
 		<legend>All USERS LIST</legend>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="org.springframework.web.servlet.view.RedirectView"%>
 <html>
 <head>
 <style>
@@ -34,7 +35,10 @@ body {
 
 </head>
 <body>
-
+<%if(session.getAttribute("userName")==null)
+	response.sendRedirect("/login");
+	%>
+	<h1>Welcome <%= session.getAttribute("userName")%></h1>
 	<div class="topnav">
 		<a class="active" href="">Home</a>
 		 <a href="/findAllUser/<%=3%>">View Users</a>
@@ -43,7 +47,7 @@ body {
 		<a href="">Ledger</a>
 		<a href="/Billing">Billing</a>
 		<a href="">Report</a>
-		<a href="/index">Logout</a>
+		<a href="/logout">Logout</a>
 	</div>
 
 </body>

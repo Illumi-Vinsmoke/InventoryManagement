@@ -6,6 +6,12 @@
 <title>Login with boot</title>
 </head>
 <body>
+
+<%if(session.getAttribute("userName")==null)
+	response.sendRedirect("/login");
+	%>
+	<h1>Welcome <%= session.getAttribute("userName")%></h1>
+	
 	<form method="post" action="/updateCustomer">
 		<fieldset>
 			<legend>Update form</legend>

@@ -16,6 +16,12 @@
 	crossorigin="anonymous">
 </head>
 <body>
+
+<%if(session.getAttribute("userName")==null)
+	response.sendRedirect("/login");
+	%>
+	<h1>Welcome <%= session.getAttribute("userName")%></h1>
+	
 	<form class="form-control">
 		<fieldset>
 		<legend>All Stock LIST</legend>

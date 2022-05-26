@@ -1,9 +1,16 @@
-package com.inventoryManagement.reportDTO;
+package com.inventoryManagement.dto;
 
 import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
+
+/**
+ * @description Class to get value from database and set into jasper Report.
+ * @ClassName OrderReport
+ * @author shubhams11
+ */
+
 
 @Getter @Setter 
 public class OrderReport {

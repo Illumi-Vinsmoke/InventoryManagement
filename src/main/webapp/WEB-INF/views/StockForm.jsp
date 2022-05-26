@@ -5,6 +5,12 @@
 <title>Login with boot</title>
 </head>
 <body>
+
+<%if(session.getAttribute("userName")==null)
+	response.sendRedirect("/login");
+	%>
+	<h1>Welcome <%= request.getAttribute("userName")%></h1>
+	
 	<form method="post" action="/saveStock">
 		<fieldset>
 			<legend>New Stock form</legend>

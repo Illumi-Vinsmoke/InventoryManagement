@@ -6,6 +6,10 @@
 <title>Login with boot</title>
 </head>
 <body>
+<%if(session.getAttribute("userName")==null)
+	response.sendRedirect("/login");
+	%>
+	<h1>Welcome <%= request.getAttribute("userName")%></h1>
 <%UserModel user=(UserModel)request.getAttribute("User");
 %>
 	<form method="post" action="/update">

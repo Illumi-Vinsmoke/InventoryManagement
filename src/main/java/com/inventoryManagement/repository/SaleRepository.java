@@ -13,5 +13,7 @@ public interface SaleRepository extends JpaRepository<SalesModel,Long> {
 	
 	@Query(value="select * from sales_model where order_id=?1 ",nativeQuery=true)
 	public List<SalesModel> findByOrderId(Long orderId);
+	@Query(value="delete from sales_model where order_id=?1 ",nativeQuery=true)
+	public void deleteByOrderId(Long order_id);
 
 }

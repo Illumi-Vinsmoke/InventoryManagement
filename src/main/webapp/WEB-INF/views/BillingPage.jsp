@@ -22,24 +22,45 @@ input[type="number"] {
 </style>
 </head>
 <body>
+<%-- 
+<%if(session.getAttribute("userName")==null)
+	response.sendRedirect("/login");
+	%>
+	<h1>Welcome <%= session.getAttribute("userName")%></h1> --%>
+	
 	<div class="p-3 mb-2 bg-success text-white">
+	<form action="/billGeneration" method="post">
 		<div>
 			<h1>Billing page</h1>
 			<hr>
 			<p>
 				Enter name of Customer <input type="text" name="customerName"
-					placeholder="Enter Nome of customer   ">
+					placeholder="Enter Name of customer" onblur="setDate()">
 			</p>
+			<div class="row ">
+			        <div class=col-md-7 ></div>
+					<div class="col-md-1">
+						<div class="form-group">
+							<label class="pb-1">Date: </label>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group ">
+							<input type="Text" name="date" value=""
+								class="form-control DateField" readonly>
+						</div>
+					</div>
+				</div>
 			<p>
 				Enter the Address of Customer <input type="text" name="address"
-					placeholder="Enter Nome of Customer   ">
+					placeholder="Enter Address of Customer">
 			</p>
 			<p>
-				Enter Mobile number of Customer <input type="text" name="conactNo"
-					placeholder=" Moblie of customer">
+				Enter Mobile number of Customer <input type="text" name="customercontactNo"
+					placeholder=" Moblie no of customer">
 			</p>
 			<br> <br> <input type="text" name="name"
-				placeholder="Enter Nome of product" id="inputValue"> <input
+				placeholder="Enter Name of product" id="inputValue"> <input
 				type="Button" value="Add in bill" class="btn btn-warning"
 				id="findData" onclick="fetch()"> <br> <br> <br>
 				
@@ -48,8 +69,8 @@ input[type="number"] {
 				<input name="Sno" type="text" value="Sno" readonly> 
 				<input name="name" type="text" value="Product Description"readonly>
 				<input name="price" type="text" value="Marked Price" readonly> 
-				<input name="discount" type="Text" value="Discount"  readonly>
-			    <input name="quantity" type="text" value="Quantity"  readonly>
+				<input name="dscnt" type="Text" value="Discount"  readonly>
+			    <input name="qty" type="text" value="Quantity"  readonly>
 				<input name="total" type="text"	value="Total" readonly> 
 			</div>
 			
@@ -123,11 +144,12 @@ input[type="number"] {
 						class="btn btn-secondary btn-sm">
 				</div>
 				<div class="col-md-6">
-					<a href="/billGeneration"><input type="Button"
-						value="Generate Bill"></a>
+					<input type="submit"
+						value="Generate Bill" >
 				</div>
 
 			</div>
+			</form>
 		</div>
 </body>
 
@@ -147,13 +169,27 @@ input[type="number"] {
 				index=index+1;
 				console.log("Name+:"+results.name )
 				$('.purchase_list').append(
-					'<div class="remove"> <input name="sno[]" type="number" value='+index+' class="Sno'+index+'" readonly> <input name="name[]" type="text" value='+results.name+' placeholder="Product Description"readonly >	<input name="price[]" type="number" value='+results.price+' placeholder="Price" class="stockPrice'+index+'" readonly>	<input name="discount[]" type="number" value='+results.discount+' placeholder="Discount" class="stockDiscount'+index+'" readonly> <input name="quantity[]" type="number" placeholder="Quantity" class="totalQty'+index+'" onchange="calculate()"> <input name="total[]" type="text" placeholder="Total" value="0" class="Amount'+index+'" readonly >	<a href="#" class="remove-field btn-remove-customer">Remove Product</a></div>');
+					'<div class="remove"> <input name="sNo" type="number" value='+index+' class="Sno'+index+'" readonly> <input name="productName" type="text" value='+results.name+' placeholder="Product Description"readonly >	<input name="actualPrice" type="number" value='+results.price+' placeholder="Price" class="stockPrice'+index+'" readonly>	<input name="discount" type="number" value='+results.discount+' placeholder="Discount" class="stockDiscount'+index+'" readonly> <input name="quantity" type="number" placeholder="Quantity" class="totalQty'+index+'" onchange="calculate()"> <input name="paybleAmount" type="text" placeholder="Amount" value="0" class="Amount'+index+'" readonly >	<a href="#" class="remove-field btn-remove-customer">Remove Product</a></div>');
 			}
 		});
 
 	}
 </script>
-
+<script>
+function setDate(){
+var date=new Date();
+    var year= date.getFullYear();
+    var month=date.getMonth()+1;
+	var day= date.getDate();
+	var hour=date.getHours();
+	var minute=date.getMinutes();
+	var seconds=date.getSeconds();
+var setDate=year+"-"+month+"-"+day+" "+hour+":"+minute+":"+seconds;
+console.log(setDate);
+	$(".DateField").val(setDate);
+	//$(".billtotalGst").val(totalGst);
+}
+</script>
 <script>
 {
 	var count=1;
